@@ -1,126 +1,69 @@
 Telco Customer Churn Prediction – End-to-End ML Project
 
-🚀 An end-to-end Machine Learning project to predict customer churn for a telecom company, with deployment (Streamlit) and business insights (Power BI).
+🚀 This repository documents my journey of building an end-to-end Machine Learning project to predict customer churn for a telecom company.
 
-🔹 Problem Statement
+Currently, I have completed Phase 1: Project Setup & Planning.
 
-Customer churn is a critical problem in the telecom industry — losing existing customers directly impacts revenue.
-The goal of this project is to:
+🔹 Phase 1: Setup & Planning
+📝 Step 1.1 – Understand the Business Problem
 
-Predict whether a customer will churn (Yes/No).
+Churn definition: Customer churn refers to when a customer stops using a company’s services.
 
-Identify key drivers of churn using explainability techniques.
+Why it matters: For telecom companies, churn directly impacts revenue. Acquiring a new customer is often more expensive than retaining an existing one.
 
-Provide actionable business insights through dashboards.
+Business need: If we can predict which customers are likely to churn, the company can take proactive actions (discounts, offers, better support) to retain them.
 
-Deploy the model into a user-friendly web app.
+Output: Clear definition of churn and its business impact.
 
-🎯 Project Objectives
+🎯 Step 1.2 – Define Goals & Metrics
 
-✔️ Perform EDA to explore churn patterns.
-✔️ Build multiple ML models (Logistic Regression, Random Forest, XGBoost).
-✔️ Optimize using hyperparameter tuning.
-✔️ Evaluate with Recall, F1-score, ROC-AUC (not just Accuracy).
-✔️ Apply SHAP explainability for feature importance.
-✔️ Deploy as an interactive Streamlit web app.
-✔️ Create a Power BI dashboard for business storytelling.
+Goal: Build a machine learning model that predicts whether a customer will churn.
 
-⚙️ Tech Stack
+Success criteria: Since churn datasets are usually imbalanced (fewer churners than non-churners), using accuracy alone is misleading.
 
-Python → pandas, NumPy, scikit-learn, XGBoost, SHAP
+Instead, we will focus on:
 
-Visualization → matplotlib, seaborn
+Recall (Sensitivity) → Catch as many churners as possible.
 
-Dashboarding → Power BI
+Precision → Ensure predictions are correct (avoid wasting offers on loyal customers).
 
-Deployment → Streamlit, Hugging Face Spaces
+F1-score → Balance between precision and recall.
 
-Version Control → Git, GitHub
+ROC-AUC → Overall model quality across thresholds.
 
-📊 Exploratory Data Analysis (EDA)
+Output: Defined performance metrics (F1, ROC-AUC) to measure model success.
 
-Some key patterns discovered:
+📂 Step 1.3 – Setup Project Folder
 
-Customers with month-to-month contracts churn significantly more.
+To keep the project organized, I created a structured folder layout:
 
-Higher MonthlyCharges correlate with churn.
-
-Longer tenure customers are more loyal.
-
-Payment methods like Electronic check show higher churn rates.
-
-(Visuals will be included in notebooks + Power BI dashboard 📈)
-
-🤖 Machine Learning Models
-Logistic Regression
-Random Forest
-XGBoost 
-
-➡️ Best model: XGBoost, optimized with hyperparameter tuning.
-
-🔍 Model Explainability
-
-Using SHAP values, we identified the most important features:
-
-Contract type
-Tenure
-MonthlyCharges
-Payment method
-
-This helps the business understand why customers are churning.
-
-🌐 Deployment
-
-✅ Streamlit App → Interactive app where users can input customer details and get churn prediction + explanation.
-
-✅ Power BI Dashboard → Business-friendly insights for stakeholders.
-
-🔗 Live Demo (Coming Soon)
-🔗 Power BI Dashboard (Coming Soon)
-
-📂 Project Structure
 Customer-Churn-ML-End-to-End/
 │
 ├── data/                # Dataset
-├── notebooks/           # Jupyter notebooks (EDA, modeling, explainability)
+├── notebooks/           # Jupyter notebooks
 ├── streamlit/           # Streamlit app code
-├── powerbi/             # Power BI dashboard file
+├── powerbi/             # Power BI dashboard
 ├── models/              # Saved ML models
-├── requirements.txt     # Python dependencies
-└── README.md            # Project documentation
-
-🚀 How to Run Locally
-
-Clone the repo:
-
-git clone https://github.com/azmat-s/Customer-Churn-ML-end-to-end.git
-cd Customer-Churn-ML-end-to-end
+└── README.md            # Documentation
 
 
-Install dependencies:
+Output: A GitHub-ready folder structure for end-to-end development.
 
-pip install -r requirements.txt
+✅ Summary of Phase 1
+Step	Task	Tools	Output
+1.1	Understand the business problem	—	Defined churn and business impact
+1.2	Define goals & metrics	—	Selected F1-score, Recall, Precision, ROC-AUC
+1.3	Setup project folder	GitHub	Created /data, /notebooks, /streamlit, /powerbi
+🎯 Next Steps
 
+Phase 2 → Data cleaning & preprocessing
 
-Run the Streamlit app:
+Phase 3 → Exploratory Data Analysis (EDA)
 
-streamlit run streamlit/app.py
+Phase 4 → Model building & evaluation
 
-🏆 Key Learnings
+Phase 5 → Deployment (Streamlit) + Power BI dashboard
 
-Hands-on experience with end-to-end ML pipelines.
+👨‍💻 Author
 
-Importance of model explainability (SHAP).
-
-Deploying ML solutions with Streamlit + GitHub + Hugging Face.
-
-Building interactive BI dashboards for storytelling.
-
-✨ Future Work
-
-Extend to an MLOps pipeline with MLflow, Docker, and CI/CD.
-
-Deploy API version with FastAPI / Flask.
-
-Add real-time monitoring for churn drift detection.
-
+📌 Azmat S. – Aspiring Data Scientist | Machine Learning Enthusiast
