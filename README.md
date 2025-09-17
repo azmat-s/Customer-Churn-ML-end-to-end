@@ -33,21 +33,6 @@ ROC-AUC → Overall model quality across thresholds.
 
 Output: Defined performance metrics (F1, ROC-AUC) to measure model success.
 
-📂 Step 1.3 – Setup Project Folder
-
-To keep the project organized, I created a structured folder layout:
-
-Customer-Churn-ML-End-to-End/
-│
-├── data/                # Dataset
-├── notebooks/           # Jupyter notebooks
-├── streamlit/           # Streamlit app code
-├── powerbi/             # Power BI dashboard
-├── models/              # Saved ML models
-└── README.md            # Documentation
-
-
-Output: A GitHub-ready folder structure for end-to-end development.
 
 ✅ Summary of Phase 1
 Step	Task	Tools	Output
