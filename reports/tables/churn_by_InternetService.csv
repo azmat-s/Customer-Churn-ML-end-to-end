@@ -1,0 +1,4 @@
+InternetService,count,churn_rate
+Fiber optic,2483,0.418
+DSL,1934,0.19
+No,1208,0.074

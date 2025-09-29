@@ -1,0 +1,17 @@
+Feature,Low-risk Category,Churn Rate,Lift vs Baseline
+OnlineSecurity,Yes,14.4%,0.54x
+Dependents,Yes,15.0%,0.56x
+TechSupport,Yes,15.3%,0.58x
+PaymentMethod,Credit card (automatic),15.4%,0.58x
+PaperlessBilling,No,16.5%,0.62x
+Partner,Yes,19.6%,0.74x
+Contract,Two year,2.9%,0.11x
+OnlineBackup,Yes,21.4%,0.81x
+DeviceProtection,Yes,22.7%,0.85x
+SeniorCitizen,No,23.6%,0.89x
+StreamingTV,No,24.0%,0.90x
+StreamingMovies,No,24.3%,0.91x
+MultipleLines,No,24.9%,0.94x
+PhoneService,No,25.3%,0.95x
+gender,Male,26.3%,0.99x
+InternetService,No,7.4%,0.28x

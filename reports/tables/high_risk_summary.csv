@@ -1,0 +1,17 @@
+Feature,High-risk Category,Churn Rate,Lift vs Baseline
+PaymentMethod,Electronic check,45.4%,1.71x
+Contract,Month-to-month,43.1%,1.62x
+SeniorCitizen,Yes,41.8%,1.57x
+InternetService,Fiber optic,41.8%,1.57x
+PaperlessBilling,Yes,33.4%,1.26x
+Partner,No,33.2%,1.25x
+Dependents,No,31.5%,1.19x
+OnlineSecurity,No,31.5%,1.19x
+TechSupport,No,31.3%,1.18x
+StreamingTV,Yes,30.6%,1.15x
+StreamingMovies,Yes,30.2%,1.14x
+OnlineBackup,No,29.4%,1.11x
+MultipleLines,Yes,28.8%,1.08x
+DeviceProtection,No,28.6%,1.08x
+gender,Female,26.8%,1.01x
+PhoneService,Yes,26.7%,1.00x

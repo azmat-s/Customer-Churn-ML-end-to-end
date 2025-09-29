@@ -1,0 +1,17 @@
+Feature,p-value
+MultipleLines,1.06e-03
+InternetService,1.17e-126
+OnlineBackup,1.44e-10
+Dependents,1.53e-37
+PaymentMethod,1.58e-114
+SeniorCitizen,1.61e-29
+DeviceProtection,1.83e-06
+OnlineSecurity,2.89e-39
+PaperlessBilling,3.40e-45
+StreamingTV,5.13e-08
+PhoneService,5.17e-01
+Contract,6.28e-212
+TechSupport,6.73e-35
+gender,6.82e-01
+Partner,8.03e-31
+StreamingMovies,9.81e-07
