@@ -1,125 +1,121 @@
-Telco Customer Churn Prediction – End-to-End ML Project
+1. Project Overview
 
-🚀 This repository documents my journey of building an end-to-end Machine Learning project to predict customer churn for a telecom company.
+Business Problem: Customer churn is costly for telecom providers. Retaining existing customers is cheaper than acquiring new ones.
 
-Currently, I have completed Phase 1: Project Setup & Planning.
+Goal: Predict which customers are at risk of churn, explain why churn happens, and provide actionable recommendations for reducing churn.
 
-🔹 Phase 1: Setup & Planning
-📝 Step 1.1 – Understand the Business Problem
+Dataset: Telco Customer Churn (Kaggle)
 
-Churn definition: Customer churn refers to when a customer stops using a company’s services.
+~7,000 customers, demographics, services, contracts, billing, churn label.
 
-Why it matters: For telecom companies, churn directly impacts revenue. Acquiring a new customer is often more expensive than retaining an existing one.
+2. Project Pipeline
 
-Business need: If we can predict which customers are likely to churn, the company can take proactive actions (discounts, offers, better support) to retain them.
+Data Ingestion & Cleaning (Phase 2)
 
-Output: Clear definition of churn and its business impact.
+Handled missing values (TotalCharges → numeric).
 
-🎯 Step 1.2 – Define Goals & Metrics
+Encoded categorical variables (one-hot encoding).
 
-Goal: Build a machine learning model that predicts whether a customer will churn.
+Train-test split (70:30).
 
-Success criteria: Since churn datasets are usually imbalanced (fewer churners than non-churners), using accuracy alone is misleading.
+Exploratory Data Analysis (Phase 3)
 
-Instead, we will focus on:
+Categorical: churn % by internet service, contract, payment method.
 
-Recall (Sensitivity) → Catch as many churners as possible.
+Numerical: tenure, monthly charges, total charges (binning + stats tests).
 
-Precision → Ensure predictions are correct (avoid wasting offers on loyal customers).
+Interaction effects: contract × payment method, internet service × tech support.
 
-F1-score → Balance between precision and recall.
+Modeling & Drivers (Phase 4)
 
-ROC-AUC → Overall model quality across thresholds.
+Logistic Regression (interpretable coefficients).
 
-Output: Defined performance metrics (F1, ROC-AUC) to measure model success.
+Random Forest / XGBoost (feature importance).
 
+SHAP values for explainability.
 
-✅ Summary of Phase 1
-Step	Task	Tools	Output
-1.1	Understand the business problem	—	Defined churn and business impact
-1.2	Define goals & metrics	—	Selected F1-score, Recall, Precision, ROC-AUC
-1.3	Setup project folder	GitHub	Created /data, /notebooks, /streamlit, /powerbi
-🎯 Next Steps
+Key drivers confirmed: contract type, payment method, internet service, tenure.
 
-Phase 2: Data Cleaning & Preprocessing (In Progress)
+Advanced Analysis
 
-Load dataset and inspect data types.
+Engagement Score → composite metric (tenure + services + billing).
 
-Convert TotalCharges from object → numeric.
+Survival Analysis → Kaplan–Meier & Cox models predict when churn happens.
 
-Handle missing/invalid values.
+End-to-End Skills (Phase 5)
 
-Encode categorical variables (label encoding/one-hot encoding).
+Packaged pipeline: ingestion → preprocessing → modeling → prediction.
 
-Scale numerical features if necessary.
+Experiment tracking (MLflow/DVC).
 
-Output: Clean dataset ready for modeling.
+Docker for reproducibility.
 
-⏳ Phase 3: Exploratory Data Analysis (EDA)
+Deployment (Phase 8)
 
-Univariate & bivariate analysis.
+Streamlit app → predict churn probability + SHAP explanations.
 
-Visualize churn distribution across different features.
+Power BI dashboard → interactive churn insights for executives.
 
-Identify correlations.
+3. Key Findings
 
-Export insights into Power BI dashboard.
+Baseline churn rate = 26.6% (~1 in 4 customers).
 
-Output: Business insights + churn patterns.
+High-risk groups:
 
-⏳ Phase 4: Model Building & Evaluation
+Month-to-month contracts → 43% churn.
 
-Train/test split.
+Fiber optic internet → 42% churn.
 
-Baseline models: Logistic Regression, Decision Tree.
+Electronic check payment → 45% churn.
 
-Advanced models: Random Forest, XGBoost.
+Low-risk groups:
 
-Hyperparameter tuning with GridSearchCV / RandomizedSearchCV.
+Two-year contracts → 3% churn.
 
-Evaluate models using F1, Recall, ROC-AUC.
+Customers with Tech Support → 15% churn.
 
-Output: Best performing model with metrics.
+Numerical insights:
 
-⏳ Phase 5: Model Explainability
+Tenure < 6 months → 54% churn vs 5+ years → 7%.
 
-Feature importance from models.
+Monthly charges $80–95 → 37% churn vs $20 → 9%.
 
-Use SHAP values to interpret predictions.
+4. Business Impact
 
-(Optional) LIME for local explanations.
+By targeting the top 10% at-risk customers (identified by model), the company could reduce churn by ~20%.
 
-Output: Transparent, explainable ML model.
+With average monthly revenue of ~$70 per customer, preventing churn of half of these customers could save $210k/year.
 
-⏳ Phase 6: Deployment
+Actionable levers:
 
-Build Streamlit app for predictions.
+Promote longer-term contracts.
 
-Integrate SHAP explanations into app.
+Provide incentives to fiber optic users.
 
-Deploy on Hugging Face Spaces / Streamlit Cloud.
+Reduce friction for high-bill customers.
 
-Output: Interactive churn prediction web app.
+Expand support services (TechSupport, OnlineSecurity).
 
-⏳ Phase 7: Power BI Dashboard
+5. Tools & Technologies
 
-Import dataset into Power BI.
+Python: pandas, numpy, scikit-learn, xgboost, lifelines, shap.
 
-Build churn dashboard with slicers, KPIs, and charts.
+Visualization: matplotlib, seaborn, Power BI.
 
-Publish interactive dashboard online.
+Deployment: Streamlit, Docker.
 
-Output: Shareable churn insights dashboard.
+Experiment Tracking: MLflow / DVC.
 
-⏳ Phase 8: Packaging & Documentation
+6. Limitations & Future Work
 
-Save trained model (.pkl file).
+Dataset is static and clean (not fully realistic).
 
-Write final project report.
+Lacks behavioral features (usage frequency, complaints, customer support logs).
 
-Update README with results, screenshots, and links.
+Future improvements:
 
-Finalize GitHub repo.
-👨‍💻 Author
+Add real-time usage & support ticket data.
 
-📌 Azmat S. – Aspiring Data Scientist | Machine Learning Enthusiast
+Expand survival analysis with richer features.
+
+Deploy model on cloud (AWS/GCP) for production.
