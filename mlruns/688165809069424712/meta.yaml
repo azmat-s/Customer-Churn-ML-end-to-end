@@ -1,0 +1,7 @@
+artifact_location: file:///C:\Users\Saniya\Desktop\Customer churn ML end to end\mlruns/688165809069424712
+creation_time: 1773507825210
+experiment_id: '688165809069424712'
+last_update_time: 1773507825210
+lifecycle_stage: active
+name: churn-model-comparison
+workspace: default

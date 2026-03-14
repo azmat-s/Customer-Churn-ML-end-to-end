@@ -1,0 +1,23 @@
+artifact_path: file:///C:\Users\Saniya\Desktop\Customer churn ML end to end\mlruns/688165809069424712/models/m-68d7e1d1c8bd42bf8b31b92b2bbdaafb/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.6.1
+    skops_trusted_types: null
+mlflow_version: 3.10.1
+model_id: m-68d7e1d1c8bd42bf8b31b92b2bbdaafb
+model_size_bytes: 12272385
+model_uuid: m-68d7e1d1c8bd42bf8b31b92b2bbdaafb
+prompts: null
+run_id: 7251709d8538412fa571997526b4d3b6
+utc_time_created: '2026-03-14 17:04:21.627266'

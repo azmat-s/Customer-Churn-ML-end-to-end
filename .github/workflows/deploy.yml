@@ -1,0 +1,28 @@
+# CI/CD Pipeline for Customer Churn ML Application
+# Render auto-deploys on push to main, so this workflow validates code before deploy
+
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Smoke test - Load model
+        run: python -c "import joblib; pipeline = joblib.load('models/lr_pipeline.joblib'); print('Model loaded successfully')"

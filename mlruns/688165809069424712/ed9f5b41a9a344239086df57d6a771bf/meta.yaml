@@ -1,0 +1,14 @@
+artifact_uri: file:///C:\Users\Saniya\Desktop\Customer churn ML end to end\mlruns/688165809069424712/ed9f5b41a9a344239086df57d6a771bf/artifacts
+end_time: 1773507858119
+entry_point_name: ''
+experiment_id: '688165809069424712'
+lifecycle_stage: active
+run_id: ed9f5b41a9a344239086df57d6a771bf
+run_name: XGBoost
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773507849506
+status: 3
+tags: []
+user_id: Saniya

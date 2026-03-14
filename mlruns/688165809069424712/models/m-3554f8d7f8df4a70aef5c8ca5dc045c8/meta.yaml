@@ -1,0 +1,10 @@
+artifact_location: file:///C:\Users\Saniya\Desktop\Customer churn ML end to end\mlruns/688165809069424712/models/m-3554f8d7f8df4a70aef5c8ca5dc045c8/artifacts
+creation_timestamp: 1773507831157
+experiment_id: '688165809069424712'
+last_updated_timestamp: 1773507849455
+model_id: m-3554f8d7f8df4a70aef5c8ca5dc045c8
+model_type: null
+name: model
+source_run_id: 5e87b0019702447cb0c7716a36c9aea3
+status: 2
+status_message: null

@@ -1,0 +1,14 @@
+artifact_uri: file:///C:\Users\Saniya\Desktop\Customer churn ML end to end\mlruns/688165809069424712/5e87b0019702447cb0c7716a36c9aea3/artifacts
+end_time: 1773507849488
+entry_point_name: ''
+experiment_id: '688165809069424712'
+lifecycle_stage: active
+run_id: 5e87b0019702447cb0c7716a36c9aea3
+run_name: LogisticRegression
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1773507829830
+status: 3
+tags: []
+user_id: Saniya
