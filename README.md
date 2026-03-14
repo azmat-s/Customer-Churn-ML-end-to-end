@@ -21,7 +21,7 @@ A production-grade machine learning system that predicts telecom customer churn 
 
 ## Live Demo
 
-🔗 **Coming soon**
+🔗 **[Live App — customer-risk-engine.onrender.com](https://customer-risk-engine.onrender.com)**
 
 ---
 
