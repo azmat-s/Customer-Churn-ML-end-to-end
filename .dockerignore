@@ -1,0 +1,10 @@
+notebooks/
+data/
+reports/
+power Bi/
+Streamlit/
+src/
+.git/
+__pycache__/
+*.ipynb
+.ipynb_checkpoints/
