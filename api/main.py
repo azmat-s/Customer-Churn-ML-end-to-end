@@ -77,6 +77,26 @@ def health():
     return {"status": "healthy"}
 
 
+def calculate_engagement_score(data):
+    # Tenure score (40%) - normalize to 0-100 (max tenure = 72)
+    tenure_score = min(data['tenure'] / 72 * 100, 100)
+
+    # Services score (30%) - count services used
+    services = ['OnlineSecurity', 'OnlineBackup', 'DeviceProtection', 'TechSupport', 'StreamingTV', 'StreamingMovies']
+    services_used = sum(1 for s in services if data[s] == 'Yes')
+    services_score = services_used / 6 * 100
+
+    # Contract score (20%)
+    contract_map = {'Month-to-month': 0, 'One year': 50, 'Two year': 100}
+    contract_score = contract_map.get(data['Contract'], 0)
+
+    # Payment score (10%)
+    payment_map = {'Electronic check': 0, 'Mailed check': 33, 'Bank transfer (automatic)': 66, 'Credit card (automatic)': 100}
+    payment_score = payment_map.get(data['PaymentMethod'], 0)
+
+    return round(tenure_score * 0.4 + services_score * 0.3 + contract_score * 0.2 + payment_score * 0.1)
+
+
 @app.post("/predict")
 def predict(customer: CustomerInput):
     # Convert input to DataFrame (pipeline expects DataFrame with column names)
@@ -86,8 +106,12 @@ def predict(customer: CustomerInput):
     prediction = int(pipeline.predict(input_df)[0])
     probability = float(pipeline.predict_proba(input_df)[0][1])
 
+    # Calculate engagement score
+    score = calculate_engagement_score(customer.model_dump())
+
     return {
         "churn_prediction": prediction,
         "churn_probability": round(probability, 4),
-        "risk_level": "High" if probability >= 0.5 else "Medium" if probability >= 0.3 else "Low"
+        "risk_level": "High" if probability >= 0.5 else "Medium" if probability >= 0.3 else "Low",
+        "engagement_score": score
     }

@@ -173,7 +173,7 @@
       margin-bottom: 1.2rem;
     }
 
-    .prob-circle {
+    .prob-circle, .score-circle {
       width: 110px;
       height: 110px;
       border-radius: 50%;
@@ -186,8 +186,21 @@
       flex-shrink: 0;
     }
 
-    .prob-circle .pct { font-size: 1.7rem; line-height: 1; }
-    .prob-circle .label { font-size: 0.65rem; color: var(--muted); margin-top: 2px; text-transform: uppercase; }
+    .prob-circle .pct, .score-circle .pct { font-size: 1.7rem; line-height: 1; }
+    .prob-circle .label, .score-circle .label { font-size: 0.65rem; color: var(--muted); margin-top: 2px; text-transform: uppercase; }
+
+    .score-circle {
+      border-color: var(--accent);
+    }
+    .score-circle .pct {
+      color: var(--accent2);
+    }
+
+    .circles-row {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
 
     .risk-badge {
       display: inline-block;
@@ -453,9 +466,15 @@
           </div>
           <div id="riskBadge"></div>
         </div>
-        <div class="prob-circle" id="probCircle">
-          <span class="pct" id="probPct">—</span>
-          <span class="label">Churn prob.</span>
+        <div class="circles-row">
+          <div class="prob-circle" id="probCircle">
+            <span class="pct" id="probPct">—</span>
+            <span class="label">Churn prob.</span>
+          </div>
+          <div class="score-circle" id="scoreCircle">
+            <span class="pct" id="scorePct">—</span>
+            <span class="label">Engagement</span>
+          </div>
         </div>
       </div>
       <div class="recommendation" id="recommendation"></div>
@@ -536,6 +555,10 @@
       document.getElementById('probPct').textContent = prob + '%';
       document.getElementById('probPct').className = `pct ${colorClass}`;
       document.getElementById('probCircle').className = `prob-circle ${borderClass}`;
+
+      // Engagement score
+      const engScore = result.engagement_score;
+      document.getElementById('scorePct').textContent = engScore + '/100';
 
       document.getElementById('riskLabel').textContent = risk;
       document.getElementById('riskLabel').className = colorClass;
